@@ -20,3 +20,7 @@ Route::get('/', function () {
 Route::get('/admin', function () {
     return view('admin.templates.default');
 })->name('admin');
+
+Route::get('/user', function () {
+    return view('admin.user.index');
+});
