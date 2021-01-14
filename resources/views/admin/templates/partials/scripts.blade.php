@@ -1,4 +1,3 @@
-<!-- jQuery 3 -->
 <script src="{{asset('assets/bower_components/jquery/dist/jquery.min.js')}}"></script>
 <!-- jQuery UI 1.11.4 -->
 <script src="{{asset('assets/bower_components/jquery-ui/jquery-ui.min.js')}}"></script>
@@ -17,7 +16,7 @@
 <script src="{{asset('assets/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js')}}"></script>
 <script src="{{asset('assets/plugins/jvectormap/jquery-jvectormap-world-mill-en.js')}}"></script>
 <!-- jQuery Knob Chart -->
-<script src="{{asset('assets/bower_components/jquery-knob/dist/jquery.knob.min.js')}}"></script>
+<script src="{{asset('assets/')}}bower_components/jquery-knob/dist/jquery.knob.min.js"></script>
 <!-- daterangepicker -->
 <script src="{{asset('assets/bower_components/moment/min/moment.min.js')}}"></script>
 <script src="{{asset('assets/bower_components/bootstrap-daterangepicker/daterangepicker.js')}}"></script>
