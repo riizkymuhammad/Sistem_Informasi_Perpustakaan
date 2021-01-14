@@ -25,10 +25,6 @@ Route::get('/user', function () {
     return view('admin.user.index');
 });
 
-Route::get('/admin', function () {
-    return view('admin.templates.default');
-})->name('admin');
-
 Auth::routes(['verify' => true]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('verified');
