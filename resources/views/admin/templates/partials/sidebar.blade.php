@@ -6,7 +6,7 @@
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MAIN NAVIGATION</li>
 
-        <li><a href="https://adminlte.io/docs"><i class="fa fa-user"></i> <span>Penulis</span></a></li>
+        <li><a href="{{route('author.index')}}"><i class="fa fa-user"></i> <span>Penulis</span></a></li>
         <li><a href="https://adminlte.io/docs"><i class="fa fa-book"></i> <span>Buku</span></a></li>
         <li><a href="https://adminlte.io/docs"><i class="fa fa-users"></i> <span>User</span></a></li>
       </ul>
