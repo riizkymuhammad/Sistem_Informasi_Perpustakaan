@@ -5,8 +5,8 @@
 
 <div class="box">
 <div class="box-header">
-              <h3 class="box-title">Data Penulis</h3>
-              <a href="{{route('author.create')}}" class="btn btn-primary">Tambah Penulis</a>
+              <h3 class="box-title">Data Buku</h3>
+              <a href="{{route('book.create')}}" class="btn btn-primary">Tambah Buku</a>
             </div>
             <div class="box-body">   
                
@@ -16,7 +16,11 @@
 <thead>
 <tr>
     <th>Id</th>
-    <th>Nama</th>
+    <th>Judul</th>
+    <th>Penulis</th>
+    <th>Keterangan</th>
+    <th>Sampul</th>
+    <th>Jumlah</th>
     <th>Aksi</th>
     
   </tr>
@@ -47,10 +51,14 @@ $(function(){
     $('#dataTable').DataTable({
         processing: true,
         serverSide: true,
-        ajax: '{{ route('admin.author.data') }}',
+        ajax: '{{ route('admin.book.data') }}',
         columns: [
             {data:'id'},
-            {data:'name'},
+            {data:'title'},
+            {data:'author'},
+            {data:'description'},
+            {data:'cover'},
+            {data:'qty'},
             {data:'action'}
         ]
     });
