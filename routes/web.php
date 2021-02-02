@@ -24,6 +24,7 @@ Route::get('/user', function () {
 })->name('homepage');
 
 Route::get('/book/{book}',[App\Http\Controllers\Frontend\BookController::class, 'show'])->name('book.show');
+Route::post('/book/{book}/borrow',[App\Http\Controllers\Frontend\BookController::class, 'borrow'])->name('book.borrow');
 
 Auth::routes(['verify' => true]);
 
