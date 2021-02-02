@@ -13,9 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/',[App\Http\Controllers\Frontend\BookController::class, 'index']);
 
 // Route::get('/admin', function () {
 //     return view('admin.templates.default');
@@ -23,7 +21,9 @@ Route::get('/', function () {
 
 Route::get('/user', function () {
     return view('admin.user.index');
-});
+})->name('homepage');
+
+Route::get('/book/{book}',[App\Http\Controllers\Frontend\BookController::class, 'show'])->name('book.show');
 
 Auth::routes(['verify' => true]);
 
