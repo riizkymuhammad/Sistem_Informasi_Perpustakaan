@@ -14,8 +14,14 @@ Route::get('/', [App\Http\Controllers\Admin\HomeController::class, 'index'])->na
 
 Route::get('/author/data', [App\Http\Controllers\Admin\DataController::class, 'authors'])->name('admin.author.data');
 Route::get('/book/data', [App\Http\Controllers\Admin\DataController::class, 'books'])->name('admin.book.data');
+Route::get('/borrow/data', [App\Http\Controllers\Admin\DataController::class, 'borrows'])->name('admin.borrow.data');
 Route::resource('author', App\Http\Controllers\Admin\AuthorController::class);
 Route::resource('book', App\Http\Controllers\Admin\BookController::class);
+Route::get('borrow',[App\Http\Controllers\Admin\BorrowController::class, 'index'])->name('borrow.index');
+Route::put('borrow/{borrowHistory}/return',[App\Http\Controllers\Admin\BorrowController::class, 'returnBook'])->name('borrow.return');
+
+Route::get('report/top-book',[App\Http\Controllers\Admin\ReportController::class, 'topBook'])->name('report.top-book');
+Route::get('report/top-user',[App\Http\Controllers\Admin\ReportController::class, 'topUser'])->name('report.top-user');
 
 
 ?>

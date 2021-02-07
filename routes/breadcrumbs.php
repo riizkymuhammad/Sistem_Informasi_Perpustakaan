@@ -39,6 +39,21 @@ Breadcrumbs::for('book.edit', function ($trail,$book) {
     $trail->push('Edit Buku', route('book.edit',$book));
 });
 
+Breadcrumbs::for('borrow.index', function ($trail) {
+    $trail->push('Beranda', route('admin.dashboard'));
+    $trail->push('Peminjam', route('borrow.index'));
+});
+
+Breadcrumbs::for('report.top-book', function ($trail) {
+    $trail->push('Beranda', route('admin.dashboard'));
+    $trail->push('Laporan Terlaris', route('report.top-book'));
+});
+
+Breadcrumbs::for('report.top-user', function ($trail) {
+    $trail->push('Beranda', route('admin.dashboard'));
+    $trail->push('Peminjam Teraktif', route('report.top-user'));
+});
+
 // // Home > Blog
 // Breadcrumbs::for('blog', function ($trail) {
 //     $trail->parent('home');

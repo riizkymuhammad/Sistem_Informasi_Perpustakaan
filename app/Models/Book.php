@@ -26,4 +26,14 @@ class Book extends Model
         return 'https://via.placeholder.com/150x200.png?text=No +Cover';
 
 }
+
+    public function borrowed(){
+        return $this->belongsToMany(User::class,'borrow_history');
+    }
+
+    public function scopeIsStillBorrow($query,$bookId){
+        return $query->where('books.id',$bookId)
+        ->where('returned_at',null)
+        ->count()>0;
+    }
 }

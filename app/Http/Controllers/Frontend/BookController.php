@@ -12,20 +12,27 @@ class BookController extends Controller
     public function index(){
 
         $books = Book::paginate(10);
-        return view('frontend.book.index',['books' =>$books]);
+        return view('frontend.book.index',['books' =>$books,'title' =>'Beranda Perpustakaan']);
     }
 
     public function show(Book $book){
 
-        return view('frontend.book.show',['book' =>$book]);
+        return view('frontend.book.show',[
+            'book' =>$book,
+            'title' =>$book->title
+            ]);
     }
 
     public function borrow(Book $book){
 
-       BorrowHistory::create([
-           'user_id' => auth()->id(),
-           'book_id' => $book->id
-       ]);
-        return 'ok';
+       $user = auth()->user();
+
+       if($user->borrow()->isStillBorrow($book->id));
+       {
+           return redirect()->back()->with('toast','Kamu sudah meminjam buku dengan judul : '. $book->title);
+       }
+       $user->borrow()->attach($book);
+       $book->decrement('qty');
+        return redirect()->back()->with('toast', 'Berhasil meminjam buku');
     }
 }
