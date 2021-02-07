@@ -9,6 +9,8 @@
         <li><a href="{{route('author.index')}}"><i class="fa fa-user"></i> <span>Penulis</span></a></li>
         <li><a href="{{route('book.index')}}"><i class="fa fa-book"></i> <span>Buku</span></a></li>
         <li><a href="{{route('borrow.index')}}"><i class="fa fa-users"></i> <span>Buku yang sedang dipinjam</span></a></li>
+        <li><a href="{{route('report.top-book')}}"><i class="fa fa-users"></i> <span>Buku Favorit</span></a></li>
+        <li><a href="{{route('report.top-book')}}"><i class="fa fa-users"></i> <span>User Teraktif</span></a></li>
       </ul>
     </section>
     <!-- /.sidebar -->
